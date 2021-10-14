@@ -37,5 +37,4 @@ def input_output():
 	else:
 		print('invalid')
 		exit()
-
 	return calculator(n1,n2,operator)
