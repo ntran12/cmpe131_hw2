@@ -1,5 +1,17 @@
 def multiply_list(list):
-    product = 1
+    '''
+    	Multiply each elements in a list
+
+	Parameter
+	--------
+	product: int/float: product of the list
+	list(list): a list that contain number
+
+	Returns the product of a list.
+	If any item in the list is invalid, it returns False.
+
+    '''
+product = 1
 
     for x in list:
 
@@ -10,7 +22,7 @@ def multiply_list(list):
 
     return product
 
-
+@testing
 Input = [1, 2, 3, 7]
 print(multiply_list(Input))
 
