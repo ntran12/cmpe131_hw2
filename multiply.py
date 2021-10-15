@@ -15,12 +15,12 @@ def multiply_list(list):
 	else return false
 
 	"""
-    product = 1
-    for x in list:
-        if type(x) == int or type(x) == float:
-            product *= x
-        else:
-	    print('invalid value!')
-            return False
-    return product
+	product = 1
+	for x in list:
+        	if type(x) == int or type(x) == float:
+            		product *= x
+        	else:
+	    		print('invalid value!')
+            		return False
+		return product
 
