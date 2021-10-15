@@ -1,3 +1,4 @@
+from __future__ import division
 def calculator(number1, number2, operator):
 
 	"""
@@ -18,25 +19,31 @@ def calculator(number1, number2, operator):
 
 	result = 0
 
-	if number1.isdigit() == True and number2.isdigit() == True:
-		num1 = float(number1)
-		num2 = float(number2)
-		if operator == '+':
-			result= num1 + num2
-		elif operator == '-':
-			result= num1 - num2
-		elif operator == '*':
-			result= num1 * num2
-		elif operator == '/':
-			result= num1 / num2
-		elif operator == '//':
-			result= num1 // num2
-		elif operator == '**':
-			result= num1 ** num2
+	if type(number1) == int or float and type(number2) == int or float and operator in ('+','-','*','/','//','**'):
+		try:
+			num1 = float(number1)
+			num2 = float(number2)
+			if operator == '+':
+				result= num1 + num2
+			elif operator == '-':
+				result= num1 - num2
+			elif operator == '*':
+				result= num1 * num2
+			elif operator == '/':
+				result= num1 / num2
+			elif operator == '//':
+				result= num1 // num2
+			elif operator == '**':
+				result= num1 ** num2
+		except ZeroDivisonError:
+			print("can not divide by zero")
+			return False
+
+		return result
+
 	else:
 		print('Invalid value!!!')
 		return False
-	return result
 
 def parse_input():
 	"""
@@ -61,7 +68,12 @@ def parse_input():
 
 	prompt = eval('input("Enter equation: ")')
 	text = prompt.split(' ')
-	num1 = text[0]
-	num2 = text[2]
-	operator = text[1]
+	if len(text) == 3
+		num1 = text[0]
+		num2 = text[2]
+		operator = text[1]
+	else
+		print("Invalid")
+		exit()
+
 	return calculator(num1,num2,operator)
