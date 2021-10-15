@@ -19,9 +19,9 @@ def calculator(number1, number2, operator):
 	return result if operator is valid
 	"""
 
-	result = 0
+	operation = ['+','-','*','/','//','**']
 
-	if type(number1) == int or float and type(number2) == int or float and operator in ('+','-','','/','//','**'):
+	if number1.isdigit() and number2.isdigit() and operator in operation:
 		try:
 			n1 = float(number1)
 			n2 = float(number2)
@@ -37,11 +37,7 @@ def calculator(number1, number2, operator):
 				result= n1 // n2
 			elif operator == '**':
 				result= n1 ** n2
-		except ZeroDivisionError:
-			print("Can not divide by Zero")
-			return False
 
-		return result
 	else:
 		print('Invalid')
 		return False
@@ -69,13 +65,10 @@ def parse_input():
 	pass these values which just split to the calculator function with 3 parameters
 	"""
 
-	prompt = eval("input('Enter equation: ')")
-	text = prompt.split(' ')
+	text = input('Enter equation: ').split()
 	if len(text) == 3:
-		n1 = text[0]
-		n2 = text[2]
-		operator = text[1]
+		n1,operator,n2 = text
+		answer = calculator(n1,n2,operator)
+		return answer
 	else:
-		print('Invalid!')
-		exit()
-	return calculator(n1,n2,operator)
+		return False
