@@ -35,7 +35,7 @@ def calculator(number1, number2, operator):
 				result= num1 // num2
 			elif operator == '**':
 				result= num1 ** num2
-		except ZeroDivisonError:
+		except ZeroDivisionError:
 			print("can not divide by zero")
 			return False
 
