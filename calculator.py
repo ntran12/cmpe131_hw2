@@ -72,7 +72,7 @@ def parse_input():
 		num1 = text[0]
 		num2 = text[2]
 		operator = text[1]
-	else
+	else:
 		print("Invalid")
 		exit()
 
