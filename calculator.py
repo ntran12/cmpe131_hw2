@@ -19,8 +19,8 @@ def calculator(number1, number2, operator):
 
 	operation = ['+','-','*','/','//','**']
 
-	if number1.isdigit() and number2.isdigit() and operator in operation:
-		try:
+	if number1.isdigit() and number2.isdigit() and operator in operations:
+
 			n1 = float(number1)
 			n2 = float(number2)
 			if operator == '+':
@@ -37,10 +37,9 @@ def calculator(number1, number2, operator):
 				result= n1 ** n2
 
 	else:
-		print('Invalid')
 		return False
 
-def parse_input():
+def user_input():
 	"""
 	take the input from user and handle them
 
@@ -62,8 +61,7 @@ def parse_input():
 	check user'input
 	pass these values which just split to the calculator function with 3 parameters
 	"""
-
-	text = input('Enter equation: ').split()
+	text = input("Enter equation: ").split()
 	if len(text) == 3:
 		n1,operator,n2 = text
 		answer = calculator(n1,n2,operator)
