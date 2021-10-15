@@ -1,29 +1,38 @@
-def multiply_list(list):
+def multiply():
 
-"""
+	"""
+	Multiply each element from myList
 
-Multiply each element from list
+	Parameter
+	--------
+	number : string
+	       hold input from user's prompt
+	myList : array of integer
+	       list contain input from user
+	result : int
+	       get result from multiplying whole list
 
-Parameter
---------
-number(string): hold input from user's prompt
-list(list): list contain input from user
-result (int): get result from multiplying whole list
+	took size from user
+	then a loop = size
+	get input values from user
+	if input is valid, put them in list and multiply together
+	else return False (invalid value)
 
-if each element in list is valid, put them in list and multiply
-else any element is invalid, immediately return False (invalid value)
+	"""
 
-"""
+	num = input ("Enter number of elements : ")
+	myList = []
 	result = 1
 
-	for n in list:
-		if type(n) == int or type(n) == float:
-			result = result * n
+	for n in range(int(num)):
+		val = input ("Enter value : ")
+		if val.isdigit() == True:
+			myList.append(int(val))
+			result *= myList[n]
 		else:
-			print("Invalid")
+			print("Invalid value!!!")
 			return False
-	return result
-
-print(multiply_list([1,2,3,4,5]))
-
+	print(f"Input = {myList}")
+	#print(f"Output = {result}")
+	return (f"Output = {result}")
 
