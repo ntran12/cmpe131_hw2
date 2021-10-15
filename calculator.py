@@ -1,5 +1,3 @@
-from _future_ import division
-
 def calculator(number1, number2, operator):
 
 	"""
