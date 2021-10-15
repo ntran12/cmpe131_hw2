@@ -5,57 +5,63 @@ def calculator(number1, number2, operator):
 
 	Parameter
 	--------
-	n1(float): hold the 1st operation
-	n2(float): hold the 2nd operation
-	operator (string): hold the symbol of operator
-
+	num1 : float
+	     hold the 1st operation
+	num2 : float
+	     hold the 2nd operation
+	operator : string
+	     hold the symbol of operator
 	parse two number to float
         return false if the operator is not existence
 	return result if operator is valid
 	"""
 
-	operation = ['+','-','*','/','//','**']
+	result = 0
 
-	if number1.isdigit() and number2.isdigit() and operator in operations:
-
-			n1 = float(number1)
-			n2 = float(number2)
-			if operator == '+':
-				result= n1 + n2
-			elif operator == '-':
-				result= n1 - n2
-			elif operator == '*':
-				result= n1 * n2
-			elif operator == '/':
-				result= n1 / n2
-			elif operator == '//':
-				result= n1 // n2
-			elif operator == '**':
-				result= n1 ** n2
-
+	if number1.isdigit() == True and number2.isdigit() == True:
+		num1 = float(number1)
+		num2 = float(number2)
+		if operator == '+':
+			result= num1 + num2
+		elif operator == '-':
+			result= num1 - num2
+		elif operator == '*':
+			result= num1 * num2
+		elif operator == '/':
+			result= num1 / num2
+		elif operator == '//':
+			result= num1 // num2
+		elif operator == '**':
+			result= num1 ** num2
 	else:
+		print('Invalid value!!!')
 		return False
+	return result
 
-def user_input():
+def parse_input():
 	"""
 	take the input from user and handle them
 
 	parameter
 	--------
-	text(string): hold string from split
-	n1(string): contain 1st number
-	n2(string): contain 2nd number
-	operator(string): contain 1
-
+	prompt : string
+	       get input from user
+	text : string
+	       hold string from split
+	num1 : string
+	       contain 1st number
+	num2 : string
+	       contain 2nd number
+	operator : string
+	       contain 1
 	get input from user
 	split the input by a delimter that is space
-	check user'input
 	pass these values which just split to the calculator function with 3 parameters
 	"""
-	text = input("Enter equation: ").split()
-	if len(text) == 3:
-		n1,operator,n2 = text
-		answer = calculator(n1,n2,operator)
-		return answer
-	else:
-		return False
+
+	prompt = eval('input("Enter equation: ")')
+	text = prompt.split(' ')
+	num1 = text[0]
+	num2 = text[2]
+	operator = text[1]
+	return calculator(num1,num2,operator)
