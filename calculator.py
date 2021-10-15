@@ -68,7 +68,7 @@ def parse_input():
 
 	prompt = eval('input("Enter equation: ")')
 	text = prompt.split(' ')
-	if len(text) == 3
+	if len(text) == 3:
 		num1 = text[0]
 		num2 = text[2]
 		operator = text[1]
